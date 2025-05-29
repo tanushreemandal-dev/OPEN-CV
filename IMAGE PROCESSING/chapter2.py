@@ -1,7 +1,6 @@
 import cv2
 
 img=cv2.imread("RESOURCES\image.png")
-
 #converting to greyscale image
 imgGrey=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 #blurring the image
