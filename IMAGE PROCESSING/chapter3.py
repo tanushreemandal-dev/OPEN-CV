@@ -9,7 +9,6 @@ imgCrop=img[0:200,200:300]
 print(img.shape)
 #print(imgresize.shape)
 print(imgCrop.shape)
-
 cv2.imshow("Original Image", img)
 #cv2.imshow("Resize Image", imgresize)
 cv2.imshow("Crop Image", imgCrop)
