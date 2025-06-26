@@ -7,7 +7,7 @@ cap.set(3,640)
 cap.set(4,480) 
 #check if video opened successfully
 def nothing(x):
-    pass
+    pass 
 cv2.namedWindow("Trackbars")
 cv2.resizeWindow("Trackbars",640,240)
 cv2.createTrackbar("Hue Min","Trackbars",0,179,nothing) 
