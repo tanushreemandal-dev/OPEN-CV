@@ -3,7 +3,7 @@ import numpy as np
 #WEBCAM
 #read webcam video
 cap = cv2.VideoCapture(0)
-cap.set(3,640)
+cap.set(3,640) 
 cap.set(4,480) 
 #check if video opened successfully
 def nothing(x):
