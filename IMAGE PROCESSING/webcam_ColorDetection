@@ -19,7 +19,7 @@ cv2.createTrackbar("Val Max","Trackbars",255,255,nothing)
 while True:
     success, img=cap.read()
     if not success:
-        break
+        break 
 
     imgHSV=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
     hue_min=cv2.getTrackbarPos("Hue Min","Trackbars")
