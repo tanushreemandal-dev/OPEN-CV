@@ -10,7 +10,7 @@ def nothing(x):
     pass
 cv2.namedWindow("Trackbars")
 cv2.resizeWindow("Trackbars",640,240)
-cv2.createTrackbar("Hue Min","Trackbars",0,179,nothing)
+cv2.createTrackbar("Hue Min","Trackbars",0,179,nothing) 
 cv2.createTrackbar("Hue Max","Trackbars",179,179,nothing)
 cv2.createTrackbar("Sat Min","Trackbars",0,255,nothing)
 cv2.createTrackbar("Sat Max","Trackbars",255,255,nothing)
