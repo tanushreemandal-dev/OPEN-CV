@@ -11,18 +11,18 @@ def nothing(x):
 cv2.namedWindow("Trackbars")
 cv2.resizeWindow("Trackbars",640,240)
 #red color
-cv2.createTrackbar("Hue Min","Trackbars",0,179,nothing)
-cv2.createTrackbar("Hue Max","Trackbars",13,179,nothing)
-cv2.createTrackbar("Sat Min","Trackbars",182,255,nothing)
-cv2.createTrackbar("Sat Max","Trackbars",255,255,nothing)
-cv2.createTrackbar("Val Min","Trackbars",87,255,nothing)
-cv2.createTrackbar("Val Max","Trackbars",255,255,nothing)
+# cv2.createTrackbar("Hue Min","Trackbars",0,179,nothing)
+# cv2.createTrackbar("Hue Max","Trackbars",13,179,nothing)
+# cv2.createTrackbar("Sat Min","Trackbars",182,255,nothing)
+# cv2.createTrackbar("Sat Max","Trackbars",255,255,nothing)
+# cv2.createTrackbar("Val Min","Trackbars",87,255,nothing)
+# cv2.createTrackbar("Val Max","Trackbars",255,255,nothing)
 
 #green colour 
-cv2.createTrackbar("Hue Min","Trackbars",0,179,nothing)
-cv2.createTrackbar("Hue Max","Trackbars",179,179,nothing)
-cv2.createTrackbar("Sat Min","Trackbars",0,255,nothing)
-cv2.createTrackbar("Sat Max","Trackbars",255,255,nothing)
+cv2.createTrackbar("Hue Min","Trackbars",30,179,nothing)
+cv2.createTrackbar("Hue Max","Trackbars",60,179,nothing)
+cv2.createTrackbar("Sat Min","Trackbars",75,255,nothing)
+cv2.createTrackbar("Sat Max","Trackbars",178,255,nothing)
 cv2.createTrackbar("Val Min","Trackbars",0,255,nothing)
 cv2.createTrackbar("Val Max","Trackbars",255,255,nothing)
 while True:
@@ -31,12 +31,12 @@ while True:
         break
 
     imgHSV=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-    r_hue_min=cv2.getTrackbarPos("Hue Min","Trackbars")
-    r_hue_max=cv2.getTrackbarPos("Hue Max","Trackbars")
-    r_sat_min=cv2.getTrackbarPos("Sat Min","Trackbars")
-    r_sat_max=cv2.getTrackbarPos("Sat Max","Trackbars")
-    r_val_min=cv2.getTrackbarPos("Val Min","Trackbars")
-    r_val_max=cv2.getTrackbarPos("Val Max","Trackbars")
+    # r_hue_min=cv2.getTrackbarPos("Hue Min","Trackbars")
+    # r_hue_max=cv2.getTrackbarPos("Hue Max","Trackbars")
+    # r_sat_min=cv2.getTrackbarPos("Sat Min","Trackbars")
+    # r_sat_max=cv2.getTrackbarPos("Sat Max","Trackbars")
+    # r_val_min=cv2.getTrackbarPos("Val Min","Trackbars")
+    # r_val_max=cv2.getTrackbarPos("Val Max","Trackbars")
 
     g_hue_min=cv2.getTrackbarPos("Hue Min","Trackbars")
     g_hue_max=cv2.getTrackbarPos("Hue Max","Trackbars")
@@ -44,17 +44,27 @@ while True:
     g_sat_max=cv2.getTrackbarPos("Sat Max","Trackbars")
     g_val_min=cv2.getTrackbarPos("Val Min","Trackbars")
     g_val_max=cv2.getTrackbarPos("Val Max","Trackbars")
-    print(r_hue_min,r_hue_max,r_sat_min,r_sat_max,r_val_min,r_val_max)
+   # print(r_hue_min,r_hue_max,r_sat_min,r_sat_max,r_val_min,r_val_max)
     print(g_hue_min,g_hue_max,g_sat_min,g_sat_max,g_val_min,g_val_max)
 
-    lower=np.array([r_hue_min,r_sat_min,r_val_min])
-    upper=np.array([r_hue_max,r_sat_max,r_val_max])
-    mask=cv2.inRange(imgHSV,lower,upper)
-    imgRes=cv2.bitwise_and(img,img,mask=mask)
+    # lower_r=np.array([r_hue_min,r_sat_min,r_val_min])
+    # upper_r=np.array([r_hue_max,r_sat_max,r_val_max])
+    # mask_r=cv2.inRange(imgHSV,lower_r,upper_r)
+    # imgRes_r=cv2.bitwise_and(img,img,mask_r=mask_r)
+
+    lower_g=np.array([g_hue_min,g_sat_min,g_val_min])
+    upper_g=np.array([g_hue_max,g_sat_max,g_val_max])
+    mask_g=cv2.inRange(imgHSV,lower_g,upper_g)
+    imgRes_g=cv2.bitwise_and(img,img,mask=mask_g)
+
+    # cv2.imshow("Original",img)
+    # # cv2.imshow("HSV",imgHSV)
+    # cv2.imshow("Mask_red",mask_r)
+    # cv2.imshow("Result_red",imgRes_r)
 
     cv2.imshow("Original",img)
     # cv2.imshow("HSV",imgHSV)
-    cv2.imshow("Mask",mask)
-    cv2.imshow("Result",imgRes)
+    cv2.imshow("Mask_green",mask_g)
+    cv2.imshow("Result_green",imgRes_g)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
