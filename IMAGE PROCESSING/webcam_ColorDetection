@@ -17,6 +17,9 @@ cv2.createTrackbar("Sat Min","Trackbars",182,255,nothing)
 cv2.createTrackbar("Sat Max","Trackbars",255,255,nothing)
 cv2.createTrackbar("Val Min","Trackbars",87,255,nothing)
 cv2.createTrackbar("Val Max","Trackbars",255,255,nothing)
+
+#green color
+
 while True:
     success, img=cap.read()
     if not success:
