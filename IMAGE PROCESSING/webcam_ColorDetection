@@ -37,6 +37,13 @@ while True:
     r_sat_max=cv2.getTrackbarPos("Sat Max","Trackbars")
     r_val_min=cv2.getTrackbarPos("Val Min","Trackbars")
     r_val_max=cv2.getTrackbarPos("Val Max","Trackbars")
+
+    g_hue_min=cv2.getTrackbarPos("Hue Min","Trackbars")
+    g_hue_max=cv2.getTrackbarPos("Hue Max","Trackbars")
+    g_sat_min=cv2.getTrackbarPos("Sat Min","Trackbars")
+    g_sat_max=cv2.getTrackbarPos("Sat Max","Trackbars")
+    g_val_min=cv2.getTrackbarPos("Val Min","Trackbars")
+    g_val_max=cv2.getTrackbarPos("Val Max","Trackbars")
     print(r_hue_min,r_hue_max,r_sat_min,r_sat_max,r_val_min,r_val_max)
 
     lower=np.array([r_hue_min,r_sat_min,r_val_min])
