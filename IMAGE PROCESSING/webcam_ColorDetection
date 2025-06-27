@@ -45,6 +45,7 @@ while True:
     g_val_min=cv2.getTrackbarPos("Val Min","Trackbars")
     g_val_max=cv2.getTrackbarPos("Val Max","Trackbars")
     print(r_hue_min,r_hue_max,r_sat_min,r_sat_max,r_val_min,r_val_max)
+    print(g_hue_min,g_hue_max,g_sat_min,g_sat_max,g_val_min,g_val_max)
 
     lower=np.array([r_hue_min,r_sat_min,r_val_min])
     upper=np.array([r_hue_max,r_sat_max,r_val_max])
